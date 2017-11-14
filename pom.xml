@@ -1,0 +1,118 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.3.7.RELEASE</version>
+    <relativePath/>
+
+	</parent>
+
+	<groupId>com.appdirect</groupId>
+	<artifactId>microservices</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<organization>
+		<name>AppDirect</name>
+		<url>http://www.appdirect.com/</url>
+	</organization>
+
+	<name>Microservices</name>
+	<url>http://maven.apache.org</url>
+
+
+	<modules>
+		<module>microservices-common</module>
+		<module>microservices-netflix</module>
+		<module>microservices-consul</module>
+	</modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>Brixton.SR7</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- This is needed for config update push notification -->
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        <version>1.0.3.RELEASE</version>
+      </dependency>
+      <dependency>
+        <groupId>de.codecentric</groupId>
+        <artifactId>spring-boot-admin-starter-client</artifactId>
+        <version>1.2.3</version>
+      </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.16.12</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <!--
+    <dependencyManagement>
+      <dependencies>
+        &lt;!&ndash; Need latest SNAPSHOT version of Sleuth to support our async use cases with Hystrix &ndash;&gt;
+        <dependency>
+          <groupId>org.springframework.cloud</groupId>
+          <artifactId>spring-cloud-starter-sleuth</artifactId>
+          &lt;!&ndash;<version>1.0.0.BUILD-SNAPSHOT</version>&ndash;&gt;
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.cloud</groupId>
+          <artifactId>spring-cloud-sleuth-core</artifactId>
+          &lt;!&ndash;<version>1.0.0.BUILD-SNAPSHOT</version>&ndash;&gt;
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.cloud</groupId>
+          <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+          &lt;!&ndash;<version>1.0.0.BUILD-SNAPSHOT</version>&ndash;&gt;
+        </dependency>
+      </dependencies>
+    </dependencyManagement>
+  -->
+	<repositories>
+    <repository>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>http://repo.maven.apache.org/maven2</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>http://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>http://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<spring.cloud.version>1.3.7.RELEASE</spring.cloud.version>
+	</properties>
+
+</project>

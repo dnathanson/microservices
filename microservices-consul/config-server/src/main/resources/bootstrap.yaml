@@ -1,0 +1,28 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: 'config-server'
+  profiles:
+    active: 'native'
+  cloud:
+    config:
+      server:
+        # Prevents config-server from reloading properties every time Consul calls ikts /health endpoint
+        health:
+          enabled: false
+#        git:
+#          uri: file://Users/dan.nathanson/src/appdirect-config
+        native:
+          searchLocations: file:${user.home}/src/appdirect-config
+
+endpoints:
+  health:
+    sensitive: false
+
+logging:
+  level:
+    root: INFO
+    com.netflix.discovery: 'OFF'
+

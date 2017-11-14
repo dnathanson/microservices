@@ -1,0 +1,23 @@
+server:
+  context-path: /admin-server
+
+eureka:
+  instance:
+    # make instance show up in Eureka faster.  Default is 30 seconds.  This should be made DEV only eventually.
+    leaseRenewalIntervalInSeconds: 3
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    statusPageUrlPath: ${server.context-path}/info
+    healthCheckUrlPath: ${server.context-path}/health
+  client:
+    healthcheck:
+      enabled: true
+
+logging:
+  level:
+    root: INFO
+    com.netflix.eureka.PeerAwareInstanceRegistry: ERROR
+
+
+zuul:
+  ignoreLocalService: false

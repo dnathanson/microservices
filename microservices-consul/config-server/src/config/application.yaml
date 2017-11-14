@@ -1,0 +1,24 @@
+# Common properties that will be included for all services
+
+# Health check endpoint doesn't require authentication
+endpoints:
+  health:
+    sensitive: false
+
+# For Feign clients, retry once on retryable errors
+ribbon:
+  MaxAutoRetries: 2
+  MaxAutoRetriesNextServer: 2
+  OkToRetryOnAllOperations: true
+
+# Prevents health check endpoints from calling out to config server to see if it's up
+health:
+  config:
+    enabled: false
+
+# Configure location of Zipkin server.  base-url in this example is for a Zipkin server running in a Docker container
+# Port 9411 is the standard port and is the one exposed by the Docker Zipkin project.
+spring:
+  zipkin:
+    base-url: http://192.168.99.100:9411
+    enabled: true

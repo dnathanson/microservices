@@ -1,0 +1,34 @@
+
+zuul:
+  # Ignore all Eureka services except those with specific routes (below)
+  ignoredServices: "*"
+  routes:
+    # routes any request starting "/api" to service with Eureka ID api-gateway.  Does not strip "/api" off of URL.
+    api-gateway:
+      path: /api/**
+      stripPrefix: false
+    admin-server:
+      path: /admin-server/**
+      stripPrefix: false
+    eureka-server: /eureka-server/**
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 3
+  client:
+    # Default values comes from org.springframework.cloud.netflix.eurek.EurekaClientConfigBean
+    registryFetchIntervalSeconds: 5
+    instanceInfoReplicationIntervalSeconds: 5
+    initialInstanceInfoReplicationIntervalSeconds: 5
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+
+logging:
+  level:
+    root: INFO

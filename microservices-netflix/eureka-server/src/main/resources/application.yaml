@@ -1,0 +1,23 @@
+eureka:
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    numberRegistrySyncRetries: 0
+    # Dev only. Allows instances to be expired out of eureka registry.  Causes lots of warnings in the logs.
+    enable-self-preservation: false
+#    response-cache-update-interval-ms: 500
+#    eviction-interval-timer-in-ms: 5000
+#    renewal-percent-threshold: 1
+
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+logging:
+  level:
+    root: INFO
+    com.netflix.eureka.PeerAwareInstanceRegistry: ERROR
+    com.netflix.eureka.PeerAwareInstanceRegistryImpl: ERROR

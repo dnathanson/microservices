@@ -1,0 +1,12 @@
+
+server:
+  port: 8989
+
+spring:
+  application:
+    name: 'hystrix-dashboard'
+  cloud:
+    config:
+      # This is default so really could be removed
+      uri: "http://localhost:8888"
+  

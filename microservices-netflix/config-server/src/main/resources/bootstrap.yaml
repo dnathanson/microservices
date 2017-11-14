@@ -1,0 +1,35 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: 'config-server'
+  profiles:
+    active: 'native'
+  cloud:
+    config:
+      server:
+#        git:
+#          uri: file://Users/dan.nathanson/src/appdirect-config
+        native:
+          searchLocations: file:${user.home}/src/appdirect-config
+
+endpoints:
+  health:
+    sensitive: false
+  
+logging:
+  level:
+    root: INFO
+    com.netflix.discovery: 'OFF'
+
+eureka:
+  instance:
+    hostame: localhost
+    leaseRenewalIntervalInSeconds: 3
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/  
+    healthcheck: 
+      enabled: true
+

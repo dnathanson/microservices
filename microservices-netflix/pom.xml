@@ -1,0 +1,150 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>com.appdirect</groupId>
+		<artifactId>microservices</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.appdirect.netflix</groupId>
+	<artifactId>microservices-netflix</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0-SNAPSHOT</version>
+
+	<name>microservices-netflix</name>
+
+	<modules>
+		<module>config-server</module>
+		<module>eureka-server</module>
+		<module>zuul-server</module>
+		<module>turbine-server</module>
+		<module>hystrix-dashboard</module>
+		<module>admin-server</module>
+		<module>ping-service</module>
+		<module>pong-service</module>
+		<module>api-gateway</module>
+		<module>load-test</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+    <netflix.feign.version>8.16.2</netflix.feign.version>
+  </properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!--
+						<dependency>
+							<groupId>org.springframework.cloud</groupId>
+							<artifactId>spring-cloud-netflix</artifactId>
+							<version>1.1.0.BUILD-SNAPSHOT</version>
+							<type>pom</type>
+							<scope>import</scope>
+						</dependency>
+			-->
+
+
+			<!-- This is needed for config update push notification -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+				<version>1.0.3.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-starter-client</artifactId>
+				<version>1.2.3</version>
+			</dependency>
+
+			<!-- Override feign version from Spring Cloud (8.1.0) so that interface inheritance is supported -->
+			<dependency>
+				<groupId>com.netflix.feign</groupId>
+				<artifactId>feign-core</artifactId>
+				<version>${netflix.feign.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.netflix.feign</groupId>
+				<artifactId>feign-ribbon</artifactId>
+				<version>${netflix.feign.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>com.netflix.ribbon</groupId>
+						<artifactId>ribbon-loadbalancer</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>com.netflix.feign</groupId>
+				<artifactId>feign-slf4j</artifactId>
+				<version>${netflix.feign.version}</version>
+			</dependency>
+<!--
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+-->
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>http://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>http://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>1.2.7.RELEASE</version>
+					<!-- defined in spring-cloud-starter-parent pom (as documentation hint),
+									but needs to be repeated here -->
+					<configuration>
+						<requiresUnpack>
+							<dependency>
+								<groupId>com.netflix.eureka</groupId>
+								<artifactId>eureka-core</artifactId>
+							</dependency>
+							<dependency>
+								<groupId>com.netflix.eureka</groupId>
+								<artifactId>eureka-client</artifactId>
+							</dependency>
+						</requiresUnpack>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

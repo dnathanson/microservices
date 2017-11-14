@@ -1,0 +1,42 @@
+# foo
+
+Participant Browser
+Participant Zuul
+Participant API Gateway
+Participant Ping Server
+Participant Pong Server
+
+alt Ping request
+Browser->+Zuul: /api/ping/foo
+Zuul->+API Gateway: /api/ping/foo
+API Gateway->+Ping Server: /ping/foo
+Ping Server->+Pong Server: /pong/foo
+Pong Server->-Ping Server: \"Pong: foo\"
+Ping Server->-API Gateway: \"Ping: Pong: foo\"
+API Gateway->-Zuul: \"API: Ping: Pong: foo\"
+Zuul->-Browser: \"API: Ping: Pong: foo\"
+end
+
+alt Pong request
+Browser->+Zuul: /api/pong/foo
+Zuul->+API Gateway: /api/pong/foo
+API Gateway->+Pong Server: /pong/foo
+Pong Server->-API Gateway: \"Pong: foo\"
+API Gateway->-Zuul: \"API: Pong: foo\"
+Zuul->-Browser: \"API: Pong: foo\"
+end
+
+Browser->+Zuul: /api/pingping/foo
+Zuul->+API Gateway: /api/pingping/foo
+par in parallel
+  API Gateway->+Ping Server: /ping/foo
+  Ping Server->-API Gateway: \"Ping: Pong: foo\"
+  Ping Server->+Pong Server: /pong/foo
+  Pong Server->-Ping Server: \"Pong: foo\"
+else
+  API Gateway->+Pong Server: /pong/foo
+  Pong Server->-API Gateway: \"Pong: foo\"
+end
+API Gateway->-Zuul: JSON response
+Zuul->-Browser: JSON response
+note left of Browser: "{\n\    "ping\": \"Ping: Pong: foo\",\n    \"pong\":\"Pong: foo\"\n}"

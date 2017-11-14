@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true">
+	<!-- Propagate Logback log levels into JUL to maintain SLF4JBridgeHandler performance -->
+	<contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+		<resetJUL>true</resetJUL>
+	</contextListener>
+
+
+	<!-- Will log all messages appdirect.log. -->
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<withJansi>true</withJansi>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>DEBUG</level>
+		</filter>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [session=%X{SESSION_ID:-},request=%X{REQUEST_ID:-}] [%15.15thread] [%level] %-40.40logger{39}: %m%n</pattern>
+		</encoder>
+	</appender>
+
+
+	<logger name="com.appdirect" level="DEBUG"/>
+
+	<root level="INFO">
+		<appender-ref ref="CONSOLE"/>
+	</root>
+
+</configuration>

@@ -1,0 +1,40 @@
+
+spring:
+  sleuth:
+    enabled: true
+    instrument:
+      web:
+        skipPattern: "/api-docs.*|/autoconfig|/health|/configprops|/dump|/info|/metrics.*|/mappings|/trace|/swagger.*|.*\\.png|.*\\.css|.*\\.js|.*\\.html|/favicon.ico|/hystrix.stream"
+    log:
+      slf4j:
+        nameSkipPattern: "http/health"
+
+hystrix:
+  threadpool:
+    default:
+      # Maximum number of concurrent requests when using thread pools (Default: 10)
+      coreSize: 10
+      # Maximum LinkedBlockingQueue size - -1 for using SynchronousQueue (Default: -1)
+      maxQueueSize: -1
+      # Queue size rejection threshold (Default: 5)
+      queueSizeRejectionThreshold: 5
+  command:
+    default:
+      circuitBreaker:
+        sleepWindowInMilliseconds: 5000
+        requestVolumeThreshold: 2
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 4000
+
+health:
+  config:
+    # Controls whether /health endpoint includes information about configuration property sources
+    # When enabled, calls to /health endpoing will trigger calls to config server
+    enabled: false
+
+request:
+  context:
+    enabled: false

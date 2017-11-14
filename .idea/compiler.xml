@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="admin-server (1) (com.appdirect.microservices.common)" />
+        <module name="admin-server (2) (com.appdirect.consul)" />
+        <module name="admin-server (3) (com.appdirect.netflix)" />
+        <module name="api-gateway (1) (com.appdirect.microservices.common)" />
+        <module name="api-gateway (2) (com.appdirect.consul)" />
+        <module name="api-gateway (3) (com.appdirect.netflix)" />
+        <module name="config-server (1) (com.appdirect.consul)" />
+        <module name="config-server (2) (com.appdirect.netflix)" />
+        <module name="eureka-server" />
+        <module name="hystrix-dashboard" />
+        <module name="load-test" />
+        <module name="microservices-framework" />
+        <module name="ping-client" />
+        <module name="ping-service (1) (com.appdirect.microservices.common)" />
+        <module name="ping-service (2) (com.appdirect.consul)" />
+        <module name="ping-service (3) (com.appdirect.netflix)" />
+        <module name="pong-client" />
+        <module name="pong-service (1) (com.appdirect.microservices.common)" />
+        <module name="pong-service (2) (com.appdirect.consul)" />
+        <module name="pong-service (3) (com.appdirect.netflix)" />
+        <module name="turbine-server" />
+        <module name="zuul-server (1) (org.springframework.cloud)" />
+        <module name="zuul-server (2) (com.appdirect.netflix)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="admin-server (1) (com.appdirect.microservices.common)" target="1.8" />
+      <module name="admin-server (2) (com.appdirect.consul)" target="1.8" />
+      <module name="admin-server (3) (com.appdirect.netflix)" target="1.8" />
+      <module name="api-gateway (1) (com.appdirect.microservices.common)" target="1.8" />
+      <module name="api-gateway (2) (com.appdirect.consul)" target="1.8" />
+      <module name="api-gateway (3) (com.appdirect.netflix)" target="1.8" />
+      <module name="config-server (1) (com.appdirect.consul)" target="1.8" />
+      <module name="config-server (2) (com.appdirect.netflix)" target="1.8" />
+      <module name="eureka-server" target="1.8" />
+      <module name="hystrix-dashboard" target="1.8" />
+      <module name="load-test" target="1.8" />
+      <module name="microservices" target="1.8" />
+      <module name="microservices-common" target="1.8" />
+      <module name="microservices-consul" target="1.8" />
+      <module name="microservices-framework" target="1.8" />
+      <module name="microservices-netflix" target="1.8" />
+      <module name="ping-client" target="1.8" />
+      <module name="ping-service (1) (com.appdirect.microservices.common)" target="1.8" />
+      <module name="ping-service (2) (com.appdirect.consul)" target="1.8" />
+      <module name="ping-service (3) (com.appdirect.netflix)" target="1.8" />
+      <module name="pong-client" target="1.8" />
+      <module name="pong-service (1) (com.appdirect.microservices.common)" target="1.8" />
+      <module name="pong-service (2) (com.appdirect.consul)" target="1.8" />
+      <module name="pong-service (3) (com.appdirect.netflix)" target="1.8" />
+      <module name="turbine-server" target="1.8" />
+      <module name="zuul-server (1) (org.springframework.cloud)" target="1.8" />
+      <module name="zuul-server (2) (com.appdirect.netflix)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

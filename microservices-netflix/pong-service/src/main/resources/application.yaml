@@ -1,0 +1,47 @@
+
+server:
+  port: 0
+
+banner:
+  location: colorbanner2.txt
+
+spring:
+  sleuth:
+    enabled: true
+    instrument:
+      web:
+        skipPattern: "/api-docs.*|/autoconfig|/health|/configprops|/dump|/info|/metrics.*|/mappings|/trace|/swagger.*|.*\\.png|.*\\.css|.*\\.js|.*\\.html|/favicon.ico|/hystrix.stream"
+
+# This is the default value
+pong-settings:
+  responseMessagePrefix: 'Pong: '
+
+eureka:
+  instance:
+    # make instance show up in Eureka faster.  Default is 30 seconds.  This should be made DEV only eventually.
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationSeconds: 2
+  client:
+    lease:
+      duration: 5
+    registryFetchIntervalSeconds: 5
+    instanceInfoReplicationIntervalSeconds: 5
+    initialInstanceInfoReplicationIntervalSeconds: 5
+    healthcheck:
+      # Sends health data to Eureka
+      enabled: true
+
+---
+spring:
+  profiles: port8004
+
+server:
+  port: 8004
+
+---
+spring:
+  profiles: port8005
+
+server:
+  port: 8005
+

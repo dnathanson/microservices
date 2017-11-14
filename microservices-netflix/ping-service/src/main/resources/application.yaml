@@ -1,0 +1,45 @@
+
+spring:
+  sleuth:
+    enabled: true
+    instrument:
+      web:
+        skipPattern: "/api-docs.*|/autoconfig|/health|/configprops|/dump|/info|/metrics.*|/mappings|/trace|/swagger.*|.*\\.png|.*\\.css|.*\\.js|.*\\.html|/favicon.ico|/hystrix.stream"
+
+
+hystrix:
+  threadpool:
+    default:
+      # Maximum number of concurrent requests when using thread pools (Default: 10)
+      coreSize: 10
+      # Maximum LinkedBlockingQueue size - -1 for using SynchronousQueue (Default: -1)
+      maxQueueSize: -1
+      # Queue size rejection threshold (Default: 5)
+      queueSizeRejectionThreshold: 5
+  command:
+    default:
+      circuitBreaker:
+        sleepWindowInMilliseconds: 5000
+        requestVolumeThreshold: 2
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 4000
+  plugin:
+     HystrixConcurrencyStrategy:
+       implementation: com.appdirect.appdirect.service.tracing.SpanPreservingConcurrencyStrategy
+
+---
+spring:
+  profiles: port8002
+
+server:
+  port: 8002
+
+---
+spring:
+  profiles: port8003
+
+server:
+  port: 8003

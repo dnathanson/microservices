@@ -1,0 +1,12 @@
+
+server:
+  port: 9999
+
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    config:
+      # This is default so really could be removed
+      uri: "http://localhost:8888"

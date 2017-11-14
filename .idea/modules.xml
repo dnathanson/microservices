@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/microservices-common/admin-server/admin-server (1) (com.appdirect.microservices.common).iml" filepath="$PROJECT_DIR$/microservices-common/admin-server/admin-server (1) (com.appdirect.microservices.common).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-consul/admin-server/admin-server (2) (com.appdirect.consul).iml" filepath="$PROJECT_DIR$/microservices-consul/admin-server/admin-server (2) (com.appdirect.consul).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-netflix/admin-server/admin-server (3) (com.appdirect.netflix).iml" filepath="$PROJECT_DIR$/microservices-netflix/admin-server/admin-server (3) (com.appdirect.netflix).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-common/api-gateway/api-gateway (1) (com.appdirect.microservices.common).iml" filepath="$PROJECT_DIR$/microservices-common/api-gateway/api-gateway (1) (com.appdirect.microservices.common).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-consul/api-gateway/api-gateway (2) (com.appdirect.consul).iml" filepath="$PROJECT_DIR$/microservices-consul/api-gateway/api-gateway (2) (com.appdirect.consul).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-netflix/api-gateway/api-gateway (3) (com.appdirect.netflix).iml" filepath="$PROJECT_DIR$/microservices-netflix/api-gateway/api-gateway (3) (com.appdirect.netflix).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-consul/config-server/config-server (1) (com.appdirect.consul).iml" filepath="$PROJECT_DIR$/microservices-consul/config-server/config-server (1) (com.appdirect.consul).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-netflix/config-server/config-server (2) (com.appdirect.netflix).iml" filepath="$PROJECT_DIR$/microservices-netflix/config-server/config-server (2) (com.appdirect.netflix).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-netflix/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/microservices-netflix/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-netflix/hystrix-dashboard/hystrix-dashboard.iml" filepath="$PROJECT_DIR$/microservices-netflix/hystrix-dashboard/hystrix-dashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-netflix/load-test/load-test.iml" filepath="$PROJECT_DIR$/microservices-netflix/load-test/load-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices.iml" filepath="$PROJECT_DIR$/microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-common/microservices-common.iml" filepath="$PROJECT_DIR$/microservices-common/microservices-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-consul/microservices-consul.iml" filepath="$PROJECT_DIR$/microservices-consul/microservices-consul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-common/microservices-framework/microservices-framework.iml" filepath="$PROJECT_DIR$/microservices-common/microservices-framework/microservices-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-netflix/microservices-netflix.iml" filepath="$PROJECT_DIR$/microservices-netflix/microservices-netflix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-common/ping-client/ping-client.iml" filepath="$PROJECT_DIR$/microservices-common/ping-client/ping-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-common/ping-service/ping-service (1) (com.appdirect.microservices.common).iml" filepath="$PROJECT_DIR$/microservices-common/ping-service/ping-service (1) (com.appdirect.microservices.common).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-consul/ping-service/ping-service (2) (com.appdirect.consul).iml" filepath="$PROJECT_DIR$/microservices-consul/ping-service/ping-service (2) (com.appdirect.consul).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-netflix/ping-service/ping-service (3) (com.appdirect.netflix).iml" filepath="$PROJECT_DIR$/microservices-netflix/ping-service/ping-service (3) (com.appdirect.netflix).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-common/pong-client/pong-client.iml" filepath="$PROJECT_DIR$/microservices-common/pong-client/pong-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-common/pong-service/pong-service (1) (com.appdirect.microservices.common).iml" filepath="$PROJECT_DIR$/microservices-common/pong-service/pong-service (1) (com.appdirect.microservices.common).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-consul/pong-service/pong-service (2) (com.appdirect.consul).iml" filepath="$PROJECT_DIR$/microservices-consul/pong-service/pong-service (2) (com.appdirect.consul).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-netflix/pong-service/pong-service (3) (com.appdirect.netflix).iml" filepath="$PROJECT_DIR$/microservices-netflix/pong-service/pong-service (3) (com.appdirect.netflix).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-netflix/turbine-server/turbine-server.iml" filepath="$PROJECT_DIR$/microservices-netflix/turbine-server/turbine-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-consul/zuul-server/zuul-server (1) (org.springframework.cloud).iml" filepath="$PROJECT_DIR$/microservices-consul/zuul-server/zuul-server (1) (org.springframework.cloud).iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservices-netflix/zuul-server/zuul-server (2) (com.appdirect.netflix).iml" filepath="$PROJECT_DIR$/microservices-netflix/zuul-server/zuul-server (2) (com.appdirect.netflix).iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,22 @@
+  
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
+logging:
+  level:
+    root: INFO
+    com.netflix.discovery: 'OFF'
+
+eureka:
+  instance:
+    # make instance show up in Eureka faster.  Default is 30 seconds.  This should be made DEV only eventually.
+    leaseRenewalIntervalInSeconds: 3
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    healthcheck:
+      enabled: true
+

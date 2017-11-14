@@ -1,0 +1,30 @@
+server:
+  context-path: /admin-server
+
+
+logging:
+  level:
+    root: INFO
+    com.netflix.eureka.PeerAwareInstanceRegistry: ERROR
+
+
+zuul:
+  ignoreLocalService: 'false'
+
+spring:
+  cloud:
+    consul:
+      discovery:
+        healthCheckPath: ${server.context-path}/health
+  # Prevent Admin Server from initializing its own ApplicationDiscoveryListener because we are using a custom one
+  # that ignores Consul and Admin Server itself from health checks.
+  boot:
+    admin:
+      discovery:
+        enabled: false
+
+admin:
+  server:
+    ignoredServiceIds:
+      - admin-server
+      - consul

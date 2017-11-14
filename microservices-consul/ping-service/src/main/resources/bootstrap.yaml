@@ -1,0 +1,17 @@
+
+server:
+  port: 0
+
+spring:
+  application:
+    name: ping-service
+  cloud:
+    config:
+      # This is default
+      uri: "http://localhost:8888"
+    consul:
+      config:
+        enabled: false
+
+
+

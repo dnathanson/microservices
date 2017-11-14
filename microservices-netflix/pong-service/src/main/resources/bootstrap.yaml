@@ -1,0 +1,13 @@
+
+spring:
+  application:
+    name: pong-service
+  cloud:
+    config:
+      # This is default
+      uri: "http://localhost:8888"
+
+# Alternatively, could discover the Config Server using Eureka by setting the following properties
+#spring.cloud.config.discovery.enabled=true
+#spring.cloud.config.discovery.serviceId=config-server
+#eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/

@@ -1,0 +1,17 @@
+# Common properties that will be included for all services
+
+# Health check endpoint doesn't require authentication
+endpoints:
+  health:
+    sensitive: false
+
+# For Feign clients, retry once on retryable errors
+ribbon:
+  MaxAutoRetries: 2
+  MaxAutoRetriesNextServer: 2
+  OkToRetryOnAllOperations: true
+
+# Prevents health check endpoints from calling out to config server to see if it's up
+health:
+  config:
+    enabled: false

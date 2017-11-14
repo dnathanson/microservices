@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-common/admin-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-common/api-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-common/microservices-framework" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-common/ping-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-common/ping-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-common/pong-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-common/pong-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-consul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-consul/admin-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-consul/api-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-consul/config-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-consul/ping-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-consul/pong-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-consul/zuul-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-netflix" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-netflix/admin-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-netflix/api-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-netflix/config-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-netflix/eureka-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-netflix/hystrix-dashboard" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-netflix/load-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-netflix/ping-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-netflix/pong-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-netflix/turbine-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/microservices-netflix/zuul-server" charset="UTF-8" />
+  </component>
+</project>
